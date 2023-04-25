@@ -55,6 +55,13 @@ function deregisterAllFonts () {
   return Canvas._deregisterAllFonts()
 }
 
+/**
+ * Reload fonts in pango backend
+ */
+function reloadFonts () {
+  return Canvas._reloadFonts()
+}
+
 exports.Canvas = Canvas
 exports.Context2d = CanvasRenderingContext2D // Legacy/compat export
 exports.CanvasRenderingContext2D = CanvasRenderingContext2D
@@ -70,6 +77,7 @@ exports.DOMPoint = DOMPoint
 
 exports.registerFont = registerFont
 exports.deregisterAllFonts = deregisterAllFonts
+exports.reloadFonts = reloadFonts
 exports.parseFont = parseFont
 
 exports.createCanvas = createCanvas
