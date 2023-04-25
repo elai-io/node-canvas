@@ -17,7 +17,8 @@ const {
   parseFont,
   registerFont,
   Canvas,
-  deregisterAllFonts
+  deregisterAllFonts,
+  reloadFonts
 } = require('../')
 
 function assertApprox(actual, expected, tol) {
@@ -116,6 +117,13 @@ describe('Canvas', function () {
     registerFont('./examples/pfennigFont/pfennigMultiByte🚀.ttf', { family: 'Pfennig' })
 
     deregisterAllFonts()
+  });
+
+  it('reloadFonts', function () {
+    // Minimal test to make sure nothing is thrown
+    registerFont('./examples/pfennigFont/Pfennig.ttf', { family: 'Pfennig' })
+
+    reloadFonts()
   });
 
   it('color serialization', function () {

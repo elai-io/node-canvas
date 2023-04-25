@@ -384,6 +384,11 @@ export function registerFont(path: string, fontFace: {family: string, weight?: s
  */
 export function deregisterAllFonts(): void;
 
+/**
+ * Reload all system accessible fonts
+ */
+export function reloadFonts(): void;
+
 /** This class must not be constructed directly; use `canvas.createPNGStream()`. */
 export class PNGStream extends Readable {}
 /** This class must not be constructed directly; use `canvas.createJPEGStream()`. */
