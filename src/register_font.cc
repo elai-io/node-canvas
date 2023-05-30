@@ -411,6 +411,7 @@ void
 reload_fonts() {
   #if !defined(__APPLE__) && !defined(_WIN32)
   // FontConfig doesn't need to be reloaded, but we need to tell Pango to, more stable workaround for Linux
+  pango_cairo_font_map_set_default(NULL);
   pango_fc_font_map_config_changed(PANGO_FC_FONT_MAP(pango_cairo_font_map_get_default()));
   #else
   // otherwise, just tell Pango to reload the font map
